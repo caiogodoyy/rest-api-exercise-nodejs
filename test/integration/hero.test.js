@@ -19,7 +19,7 @@ test("/heroes Integration Test Suite", async (t) => {
             })
         })
 
-        const result = await request.json() // obtem o body da resposta da requesição
+        const result = await request.json() // obtem o body da resposta da requisição
 
         assert.deepStrictEqual(request.headers.get("content-type"), "application/json")
         assert.strictEqual(request.status, 201)

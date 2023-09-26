@@ -1,4 +1,3 @@
-import { error } from "node:console";
 import { parse } from "node:url";
 import { heroes } from "./routes/HeroesRoutes.js";
 import { JSON_CONTENT_TYPE } from "./utils/Header.js";

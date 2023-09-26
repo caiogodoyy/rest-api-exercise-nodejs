@@ -2,14 +2,15 @@ import { once } from 'node:events';
 import Hero from "../entities/Hero.js"
 import { JSON_CONTENT_TYPE } from '../utils/Header.js';
 
-const heroes = ({ heroService }) => ({
+const heroes = ({ heroService }) => ({ // função que recebe um objeto heroService como paramêtro e retorna um objeto
     "/heroes:GET": async (request, response) => {
         response.write("HEROES GET")
         response.end()
     },
 
     "/heroes:POST": async (request, response) => {
-        const data = await once(request, "data")
+        const data = await once(request, "data") // aguarda até que os dados da requisição estejam disponíveis com a função once
+        // retorna uma string contendo os dados da requisição
         const item = JSON.parse(data)
         const hero = new Hero(item)
 
