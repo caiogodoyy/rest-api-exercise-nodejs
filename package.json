@@ -1,0 +1,15 @@
+{
+  "name": "rest-api-nodejs-noframework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "start": "node src/Server.js",
+    "dev": "node --watch --no-warnings src/Server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
