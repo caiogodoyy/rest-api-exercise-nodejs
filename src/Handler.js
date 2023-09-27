@@ -5,7 +5,7 @@ import { JSON_CONTENT_TYPE } from "./utils/Header.js";
 import { createHeroesServiceInstance } from "./factories/HeroesFactory.js";
 
 const currentPath = dirname(fileURLToPath(import.meta.url))
-const dbPath = join(currentPath, "../db/data.json")
+const dbPath = join(currentPath, "./../db", "data.json")
 const heroesService = createHeroesServiceInstance(dbPath)
 
 const heroesRoutes = heroes({ heroesService: heroesService })
@@ -26,13 +26,13 @@ function handler(request, response) {
     const key = `${pathname}:${method}`
     const chosen = serverRoutes[key] || routes.default
 
-    console.log(`requesting ${key}...`)
+    console.log(`Requesting ${key}`)
     return Promise.resolve(chosen(request, response)).catch(errorHandler(response))
 }
 
 function errorHandler(response) {
     return error => {
-        console.log(`Something went wrong...\n${error.stack}`)
+        console.log(`ERROR: The operation could not be completed\n${error.stack}`)
         response.writeHead(500, JSON_CONTENT_TYPE)
         response.write(JSON.stringify({
             error: "Internal Server Error"

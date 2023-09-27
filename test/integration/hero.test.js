@@ -13,7 +13,7 @@ test("/heroes Integration Test Suite", async (t) => {
         const request = await fetch(testUrl, { // gerando uma requisição http com a função fetch
             method: 'POST',
             body: JSON.stringify({
-                name: "Batman",
+                name: "Ironman",
                 age: 50,
                 power: "money"
             })

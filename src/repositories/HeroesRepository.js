@@ -2,12 +2,12 @@ import { readFile, writeFile } from "node:fs/promises";
 
 export default class HeroesRepository {
 
-    constructor({ file }) {
-        this.file = file
+    constructor({ dbPath }) {
+        this.dbPath = dbPath
     }
 
     async #getDatabase() {
-        return JSON.parse(await readFile(this.file))
+        return JSON.parse(await readFile(this.dbPath))
     }
 
     find() {
@@ -15,15 +15,13 @@ export default class HeroesRepository {
     }
 
     async create(data) {
-        const db = this.#getDatabase
+        const db = await this.#getDatabase()
         db.push(data)
 
         await writeFile(
-            this.file,
+            this.dbPath,
             JSON.stringify(db)
         )
-
-        return data.id
     }
 
 }
