@@ -1,8 +1,14 @@
-import { parse } from "node:url";
+import { fileURLToPath, parse } from "node:url";
+import { join, dirname } from "node:path";
 import { heroes } from "./routes/HeroesRoutes.js";
 import { JSON_CONTENT_TYPE } from "./utils/Header.js";
+import { createHeroesServiceInstance } from "./factories/HeroesFactory.js";
 
-const heroesRoutes = heroes({ heroService: {} })
+const currentPath = dirname(fileURLToPath(import.meta.url))
+const dbPath = join(currentPath, "../db/data.json")
+const heroesService = createHeroesServiceInstance(dbPath)
+
+const heroesRoutes = heroes({ heroesService: heroesService })
 
 const serverRoutes = {
     ...heroesRoutes, // adiciona as propriedades do objeto heroesRoutes ao objeto serverRoutes (spread)

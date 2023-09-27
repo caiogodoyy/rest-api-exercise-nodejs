@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-export default class HeroRepository {
+export default class HeroesRepository {
 
     constructor({ file }) {
         this.file = file
