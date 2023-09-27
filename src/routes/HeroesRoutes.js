@@ -4,7 +4,9 @@ import { JSON_CONTENT_TYPE } from '../utils/Header.js';
 
 const heroes = ({ heroesService }) => ({ // função que recebe um objeto heroesService como paramêtro e retorna um objeto
     "/heroes:GET": async (request, response) => {
-        response.write("HEROES GET")
+        const list = await heroesService.find()
+        console.log(list)
+        response.write(JSON.stringify(list))
         response.end()
     },
 
