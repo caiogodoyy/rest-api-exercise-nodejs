@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert";
 import { promisify } from "node:util";
 
-test("/heroes Integration Test Suite", async (t) => {
+test("Heroes Integration Test Suite", async (t) => {
     const TEST_PORT = 3334
     process.env.PORT = TEST_PORT
 

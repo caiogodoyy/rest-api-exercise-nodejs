@@ -5,7 +5,7 @@ import { JSON_CONTENT_TYPE } from "./utils/Header.js";
 import { createHeroesServiceInstance } from "./factories/HeroesFactory.js";
 
 const currentPath = dirname(fileURLToPath(import.meta.url))
-const dbPath = join(currentPath, "./../db", "data.json")
+const dbPath = join(currentPath, "../db/data.json")
 const heroesService = createHeroesServiceInstance(dbPath)
 
 const heroesRoutes = heroes({ heroesService: heroesService })

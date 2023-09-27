@@ -1,8 +1,1 @@
-[
-    {
-        "id": "242da869-7b06-45a9-9502-27681a15b6c4",
-        "name": "Ironman",
-        "age": 50,
-        "power": "money"
-    }
-]
+[{"id":"fa4bfbe6-2d60-484d-882e-bcee1ae0637e","name":"Ironman","age":50,"power":"money"},{"id":"9db192ae-3f70-4276-9075-50a9e50bf264","name":"Ironman","age":50,"power":"money"},{"id":"4ac3748a-1eeb-494d-a1ba-82bd4d56646f","name":"Ironman","age":50,"power":"money"}]
